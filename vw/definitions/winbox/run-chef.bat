@@ -1,5 +1,5 @@
-SET DIR=%~dp0%
+@SET DIR=%~dp0%
 
-C:\Users\vagrant\bin\chef-solo -j %DIR%run-chef.json
+C:\Users\vagrant\bin\chef-solo -r "recipe[SC-win-run]"
 
-EXIT
+EXIT 0

@@ -9,7 +9,6 @@
 config = node['win-dev']['config']
 
 homebrew_tap 'caskroom/cask'
-homebrew_tap 'caskroom/versions'
 
 package 'brew-cask' do
   action :install

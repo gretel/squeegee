@@ -22,7 +22,7 @@ Veewee::Session.declare({
     :winrm_password => 'vagrant',
     :postinstall_timeout => '7200',
     :postinstall_files => [
-      'install-chef.bat', 'run-chef.json', 'run-chef.bat'
+      'install-chef.bat', 'run-chef.bat'
       ],
     # No sudo on windows
     :sudo_cmd => '%f',
