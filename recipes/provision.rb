@@ -5,5 +5,3 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-
-log 'Provision ...'

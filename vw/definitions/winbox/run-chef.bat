@@ -1,5 +1,5 @@
-@ECHO "Have a look out of the window ..."
-@GOTO :done
+SET DIR=%~dp0%
 
-:done
+C:\Users\vagrant\bin\chef-solo -j %DIR%run-chef.json
+
 EXIT

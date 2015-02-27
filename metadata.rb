@@ -8,3 +8,6 @@ version          '0.1.0'
 
 # # https://git.corp.adobe.com/cloudops-cookbooks/cloudops-base
 # depends 'cloudops'
+
+# https://github.com/opscode-cookbooks/homebrew
+depends 'homebrew'

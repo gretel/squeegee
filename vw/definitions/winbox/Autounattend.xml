@@ -208,7 +208,7 @@
                 <HelpCustomized>false</HelpCustomized>
             </OEMInformation>
             <!-- Rename computer here. -->
-            <ComputerName>SC-win-dev</ComputerName>
+            <ComputerName>winbox</ComputerName>
             <TimeZone>Pacific Standard Time</TimeZone>
             <RegisteredOwner/>
         </component>

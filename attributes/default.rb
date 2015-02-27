@@ -6,7 +6,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-default['win-dev']['deploy'].tap do |dply|
+default['win-dev']['config'].tap do |config|
 
   # create user's writable ('shared') directories. path recursion is enabled.
 #  dply['writable_dirs'] = ['bin', 'conf', 'log', 'run', 'zk-log-index', 'zk-install', 'zk-log', 'zk-snapshot', 'zk-transaction' ]
