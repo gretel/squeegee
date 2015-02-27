@@ -1,0 +1,15 @@
+Veewee::Config.run do |config|
+
+  # Initialize convenience vars
+  cwd = File.join(File.dirname(__FILE__), 'vw')
+  env = config.veewee.env
+
+  # These env settings will override default settings
+  env.cwd              = cwd
+  # env.template_path    = [File.join(cwd, 'templates')]
+  # env.validation_dir   = File.join(cwd, 'validation')
+  env.definition_dir   = File.join(cwd, 'definitions')
+  env.iso_dir          = File.join(cwd, 'iso')
+  env.tmp_dir          = File.join(cwd, 'tmp')
+
+end
