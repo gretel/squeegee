@@ -30,11 +30,14 @@ Squeegee by itself does not do much. It glues together the properties of some su
 - [Homebrew](http://brew.sh/) and [Homebrew Cask](http://caskroom.io/)
 
 #### Homebrew
+
 ```
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ```
+
 #### Homebrew Cask
+
 ```
 $ brew install caskroom/cask/brew-cask
 
@@ -89,6 +92,7 @@ If you want to overwrite a previous build do
 ```
 $ bundle exec veewee vbox build winbox --force
 ```
+
 Please wait a bit until the VirtualBox window comes up.
 
 ## Management
