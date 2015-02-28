@@ -28,18 +28,17 @@ Veewee::Session.declare({
   :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c \'Vagrant Shutdown\'',
   :virtualbox => {
     :vm_options => [
-      # Some example settings
-      'audio' => 'coreaudio',          # Enable Audio by setting host to coreaudio driver
-      'audiocontroller' => 'hda',      # Use simulated Intel HD audio
-      'ioapic' => 'on',                # APIC is necessary for symmetric multiprocessor (SMP) support
-      'rtcuseutc' => 'on',             # UTC internal time
+      'audio' => 'coreaudio',
+      'audiocontroller' => 'hda',
+      'ioapic' => 'on',
+      'rtcuseutc' => 'on',
       'usb' => 'on',
-      'mouse' => 'usbtablet',          # Enable absolute pointing device
+      'mouse' => 'usbtablet',
       'accelerate2dvideo' => 'on',
-      'accelerate3d' => 'off',         # Necessary for X to start the Unity desktop in Ubuntu 12.10+ -- Useful for 12.04, although can slow the VM if host hardware lacks good 3D support
-      'clipboard' => 'bidirectional',  # Useful for clipboard sharing between host & guest
+      'accelerate3d' => 'off',
+      'clipboard' => 'bidirectional'
       # A Full list of settings can be found here: http://virtualbox.org/manual/ch08.html#idp51057568
-      # Or generated based on the current settings of a virtualbox guest, such a machine named: winbox
+      # Or generated based on the current settings of a virtualbox guest:
       # VBoxManage showvminfo --machinereadable 'winbox'
     ]
   }
