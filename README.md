@@ -1,8 +1,8 @@
 ## Squeegee [tech.]
 
-Provisioning nice and shiny Windows operating system environments has not always been a easy task. Now, with squeegee in your toolbox you can feel the spirit of Microsoft again.
+Provisioning nice and shiny *Windows* operating system environments has not always been a easy task. Now, with squeegee in your toolbox you can feel the spirit of *Microsoft* again.
 
-Squeegee by itself does not do much. It glues together the properties of some supergood opensource projects. So what do we got here?
+*Squeegee* by itself does not do much. It glues together the properties of some supergood opensource projects. So what do we got here?
 
 - Template-based creation of windows boxen ([Veewee](https://github.com/jedi4ever/veewee))
 - Ruby-esque configuration of [VirtualBox](http://www.virtualbox.org/) boxen provider
