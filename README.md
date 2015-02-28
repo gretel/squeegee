@@ -13,6 +13,11 @@ Provisioning nice and shiny **Windows** operating system environments has not al
 - Repeatable, _reboot resilient_ software package management using [Chocolatey](https://chocolatey.org/) packages ([Boxstarter](http://boxstarter.org/))
 - No hacks or dirty tricks, industry-standard _open-source_ software (except [Windows](https://www.youtube.com/watch?v=cif674rUyNE) :)
 
+
+## Quick introduction
+
+My machine is not so fast therefore provisioning takes a awful long time. Please have a look though:
+
 ![Building a boxen](https://raw.githubusercontent.com/gretel/squeegee/master/doc/build.gif "bundle exec veewee vbox build winbox")
 
 ## Supported Source Platform
