@@ -237,7 +237,7 @@ OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Server
 OS Build Type:             Multiprocessor Free
 Registered Owner:
-Registered Organization:   Adobe Systems GmbH
+Registered Organization:   Some Corp
 Product ID:                00183-90000-00001-AA422
 Original Install Date:     2/28/2015, 1:39:43 PM
 System Boot Time:          2/28/2015, 10:07:20 PM
@@ -330,4 +330,4 @@ Please see the documentation on [squeegee-run](https://github.com/gretel/squeege
 
 ## License and Authors
 
-Author:: Tom Hensel (adobe@jitter.eu (tom87213@adobe.com))
+Author:: Tom Hensel (github@jitter.eu)
