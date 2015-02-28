@@ -313,7 +313,6 @@ Executing winrm command: ohai
       "fs_type": "ntfs",
       "volume_name": "Windows 2012"
     },
-[...]
 ```
 
 ## Bootstrap cookbook
