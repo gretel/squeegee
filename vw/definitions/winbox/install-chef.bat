@@ -16,8 +16,9 @@
 @set REMOTE_SOURCE_MSI_URL=https://www.opscode.com/chef/install.msi
 @set LOCAL_DESTINATION_MSI_PATH=%TEMP%\chef-client-latest.msi
 @set QUERY_STRING=?DownloadContext=PowerShell
-
 @set DOWNLOAD_COMMAND=$webClient=new-object System.Net.WebClient; $webClient.DownloadFile('%REMOTE_SOURCE_MSI_URL%%QUERY_STRING%', '%LOCAL_DESTINATION_MSI_PATH%')
+
+@ECHO Get-Date $wc.ResponseHeaders["Last-Modified"] -Format "yyyyMMdd";
 
 @if EXIST "%LOCAL_DESTINATION_MSI_PATH%" del /f /q "%LOCAL_DESTINATION_MSI_PATH%"
 powershell -noprofile -noninteractive -command "%DOWNLOAD_COMMAND%"
@@ -26,6 +27,7 @@ powershell -noprofile -noninteractive -command "%DOWNLOAD_COMMAND%"
     ) else (
   @ECHO Failed to download %REMOTE_SOURCE_MSI_URL%
   @ECHO Subsequent attempt to install the downloaded MSI is likely to fail
+  del /f /q "%LOCAL_DESTINATION_MSI_PATH%"
 )
 
 msiexec /qn /i "%LOCAL_DESTINATION_MSI_PATH%"

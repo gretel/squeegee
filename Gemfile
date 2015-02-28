@@ -3,12 +3,11 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'berkshelf'
 
-gem 'chef'
-
-gem 'veewee'
-gem 'em-winrm'
+gem 'rake'
 gem 'log4r'
 gem 'thor'
+gem 'veewee'
+gem 'em-winrm'
 
 group :development do
     gem 'thor-foodcritic'
