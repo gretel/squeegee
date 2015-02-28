@@ -25,7 +25,7 @@ Veewee::Session.declare({
   ],
   # No sudo on windows
   :sudo_cmd => '%f',
-  :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c \'Vagrant Shutdown\'',
+  :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"',
   :virtualbox => {
     :vm_options => [
       'audio' => 'coreaudio',
