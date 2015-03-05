@@ -2,6 +2,8 @@
 
 Provisioning nice and shiny **Windows** operating system environments has not always been a easy task. Now, with squeegee in your toolbox you can feel the spirit of **Microsoft** again.
 
+![Squeegee Logo](https://raw.githubusercontent.com/gretel/squeegee/master/doc/squeegee.jpeg "tool of clear vision")
+
 **Squeegee** by itself does not do much. It glues together the properties of some supergood opensource projects. So what do we got here?
 
 - _Template-based_ creation of windows boxen ([Veewee](https://github.com/jedi4ever/veewee))
@@ -18,7 +20,7 @@ Provisioning nice and shiny **Windows** operating system environments has not al
 
 My machine is not so fast therefore provisioning takes a awful long time. Please have a look though:
 
-![Building a boxen](https://raw.githubusercontent.com/gretel/squeegee/master/doc/build.gif "bundle exec veewee vbox build winbox")
+![Building a boxen](https://raw.githubusercontent.com/gretel/squeegee/master/doc/build.gif "$ bundle exec veewee vbox build winbox")
 
 ## Supported Source Platform
 
