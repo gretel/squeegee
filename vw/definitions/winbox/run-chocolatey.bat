@@ -2,53 +2,53 @@
 
 
 @REM https://chocolatey.org/packages/ChocolateyGUI
-choco -ry install chocolateygui
+choco -y install chocolateygui
 
 
 @REM https://chocolatey.org/packages/ruby
 @REM let's stick with chef's embedded ruby for now (install-chef.bat)
-@REM  choco -ry install ruby2
+@REM  choco -y install ruby2
 
 @REM https://chocolatey.org/packages/ruby2.devkit
 @REM allows to update i.e. 'bigdecimal' in 'do-update_gems.bat' - will not fail though
-choco -ry install ruby2.devkit
+choco -y install ruby2.devkit
 
 
 @REM https://chocolatey.org/packages/git
-choco -ry install git --params="/GitAndUnixToolsOnPath /NoAutoCrlf"
+choco -y install git --params="/GitAndUnixToolsOnPath /NoAutoCrlf"
 
 
 @REM https://chocolatey.org/packages/Atom
-choco -ry install atom
+choco -y install atom
 
 @REM https://chocolatey.org/packages/baretail
-choco -ry install baretail
+choco -y install baretail
 
 @REM https://chocolatey.org/packages/Console2
-choco -ry install console2
+choco -y install console2
 
 @REM https://chocolatey.org/packages/cyberduck
-choco -ry install cyberduck
+choco -y install cyberduck
 @REM https://chocolatey.org/packages/duck
-choco -ry install duck
+choco -y install duck
 
 @REM https://chocolatey.org/packages/Firefox
-choco -ry install firefox
+choco -y install firefox
 
 @REM https://chocolatey.org/packages/logparser
-choco -ry install logparser
+choco -y install logparser
 
 @REM https://chocolatey.org/packages/procexp
-choco -ry install procexp
+choco -y install procexp
 
 @REM https://chocolatey.org/packages/putty.portable
-choco -ry install putty.portable
+choco -y install putty.portable
 
 @REM https://chocolatey.org/packages/SourceCodePro
-choco -ry install sourcecodepro
+choco -y install sourcecodepro
 
 @REM https://chocolatey.org/packages/sysinternals
-choco -ry install sysinternals
+choco -y install sysinternals
 
 
 EXIT 0
