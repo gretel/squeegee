@@ -77,7 +77,7 @@ $ brew cask update virtualbox
 
 If you intend to manually interfere with **VirtualBox** you can lookup it's info:
 
-```shell
+```text
 $ brew cask info virtualbox
 virtualbox: x.y.zz-bbbbb
 VirtualBox
@@ -122,13 +122,13 @@ $ bundle
 
 The result should look as satisfying as:
 
-```shell
+```text
 Bundle complete! 8 Gemfile dependencies, 104 gems now installed.
 ```
 
 Mind the wrapping calls to `bundle` to ensure **Veewee** will be able to resolve it's dependencies. Check if the template supplied is defined as expected:
 
-```shell
+```text
 $ bundle exec veewee vbox list
 The following definitions are available in /Users/hensel/Sync/prjcts/squeegee:
 - winbox
@@ -234,6 +234,7 @@ Now the fun part starts! To begin we need to build a boxen:
 ```shell
 $ bundle exec veewee vbox build winbox
 ```
+
 Please wait a bit until the **VirtualBox** window comes up.
 
 If you would like to overwrite a previous build do:
@@ -261,7 +262,7 @@ Saving screenshot of vm winbox in screen.png
 
 Veewee includes a PowerShell-based approach to interactive management - you should check it out:
 
-```shell
+```text
 $ bundle exec veewee vbox winrm winbox
 This is a simple interactive shell
 To exit interactive mode, use 'quit!'
@@ -274,7 +275,7 @@ veewee> quit!
 
 To bring up the boxen and shut it down five minuter later:
 
-```shell
+```text
 $ bundle exec veewee vbox up winbox; sleep 300s; bundle exec veewee vbox halt winbox
 Finding unused TCP port in range: 5985 - 6025
 Selected TCP port 5985
@@ -287,7 +288,7 @@ Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"
 
 While **WinRM** offers a SSH-like approach to remote management using **Chef** nicely meets our contemporary demands. Invoke `chef-client` like this:
 
-```shell
+```text
 $ bundle exec veewee vbox winrm winbox chef-solo
 Executing winrm command: chef-solo
 {:config_missing=>true}
@@ -369,7 +370,6 @@ Much more in-depth information can be provided by calling `ohai`:
 
 ```shell
 $ bundle exec veewee vbox winrm winbox ohai
-Executing winrm command: ohai
 ```
 ```json
 {
@@ -406,6 +406,7 @@ Executing winrm command: ohai
       "fs_type": "ntfs",
       "volume_name": "Windows 2012"
     },
+    [...]
 ```
 *Beware*! It's a big bunch of data. Consider using some fast `JSON` support like [oj](https://github.com/ohler55/oj).
 
@@ -413,7 +414,7 @@ Executing winrm command: ohai
 
 **Vagrant** has to be installed first (see above). It's a pleasure to export using **Veewee**:
 
-```shell
+```text
 $ bundle exec veewee vbox export winbox
 Creating a temporary directory for export
 Adding additional files
