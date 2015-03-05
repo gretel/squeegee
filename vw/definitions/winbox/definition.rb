@@ -9,7 +9,7 @@ Veewee::Session.declare({
   :iso_md5 => '8503997171f731d9bd1cb0b0edc31f3d',
   :iso_src => 'http://care.dlservice.microsoft.com//dl/download/6/D/A/6DAB58BA-F939-451D-9101-7DE07DC09C03/9200.16384.WIN8_RTM.120725-1247_X64FRE_SERVER_EVAL_EN-US-HRM_SSS_X64FREE_EN-US_DV5.ISO',
   :iso_download_timeout => '1800',
-  :disk_size => '12675', :disk_format => 'VDI', :hostiocache => 'on',
+  :disk_size => '20280', :disk_format => 'VDI', :hostiocache => 'on',
   :floppy_files => [
     'Autounattend.xml',
     'oracle-cert.cer'
