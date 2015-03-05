@@ -1,3 +1,4 @@
+# https://docs.vagrantup.com/v2/vagrantfile/index.html
 # https://github.com/WinRb/vagrant-windows
 Vagrant.configure(2) do |config|
   config.vm.box = "winbox.box"
