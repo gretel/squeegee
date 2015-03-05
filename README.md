@@ -15,7 +15,6 @@ Provisioning nice and shiny **Windows** operating system environments has not al
 - [PowerShell](http://social.technet.microsoft.com/wiki/contents/articles/4725.powershell-v3-guide.aspx) 3, [CMD.EXE](http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/cmd.mspx) and [Cygwin](http://cygwin.com/) (installs using `Chocolatey`) supported
 - No hacks or dirty tricks, industry-standard _open-source_ software (except [Windows](https://www.youtube.com/watch?v=cif674rUyNE) :)
 
-
 ## Quick introduction
 
 My machine is not so fast therefore provisioning takes a awful long time. Please have a look though:
@@ -247,6 +246,12 @@ $ bundle exec veewee vbox build winbox --force
 ```
 
 *Be careful!* Any changes to `vw/definitions/winbox` will be overwritten when `--force` is applied - better commit them first.
+
+If you don't want to watch the nice GUI asking you no questions you are free to disable it. Good for automation/CI purposes, too!
+
+```shell
+$ bundle exec veewee vbox build winbox --force --nogui
+```
 
 ## Usage Examples
 
