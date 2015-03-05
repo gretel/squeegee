@@ -1,5 +1,5 @@
-@SET DIR=%~dp0%
+@REM https://github.com/chocolatey/chocolatey/wiki/Installation
 
-%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy unrestricted -Command "& '%DIR%install-chocolatey.ps1' %*"
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "(iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))) >$null 2>&1" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
 EXIT 0
