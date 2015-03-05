@@ -247,12 +247,6 @@ $ bundle exec veewee vbox build winbox --force
 
 *Be careful!* Any changes to `vw/definitions/winbox` will be overwritten when `--force` is applied - better commit them first.
 
-If you don't want to watch the nice GUI asking you no questions you are free to disable it. Good for automation/CI purposes, too!
-
-```shell
-$ bundle exec veewee vbox build winbox --force --nogui
-```
-
 ## Usage Examples
 
 Bring up the boxen we have built, again:
