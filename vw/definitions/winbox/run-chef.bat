@@ -1,5 +1,3 @@
-@SET DIR=%~dp0%
-
-cmd /c chef-solo -o "recipe[squeegee-run]"
+cmd /c chef-client.bat -j C:\chef\first-boot.json
 
 EXIT 0

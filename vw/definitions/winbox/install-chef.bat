@@ -18,8 +18,6 @@
 @set QUERY_STRING=?DownloadContext=PowerShell
 @set DOWNLOAD_COMMAND=$webClient=new-object System.Net.WebClient; $webClient.DownloadFile('%REMOTE_SOURCE_MSI_URL%%QUERY_STRING%', '%LOCAL_DESTINATION_MSI_PATH%')
 
-@ECHO Get-Date $wc.ResponseHeaders["Last-Modified"] -Format "yyyyMMdd";
-
 @if EXIST "%LOCAL_DESTINATION_MSI_PATH%" del /f /q "%LOCAL_DESTINATION_MSI_PATH%"
 powershell -noprofile -noninteractive -command "%DOWNLOAD_COMMAND%"
 @IF NOT ERRORLEVEL 1 (
