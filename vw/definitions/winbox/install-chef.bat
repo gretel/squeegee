@@ -31,7 +31,7 @@ powershell -noprofile -noninteractive -command "%DOWNLOAD_COMMAND%"
 msiexec /qn /i "%LOCAL_DESTINATION_MSI_PATH%"
 
 @endlocal
-EXIT
+EXIT 0
 
 :done
-EXIT
+EXIT 0

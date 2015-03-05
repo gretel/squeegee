@@ -1,7 +1,7 @@
 # https://github.com/jedi4ever/veewee/blob/master/doc/customize.md
 Veewee::Session.declare({
   :cpu_count => '2',
-  :memory_size=> '2048',
+  :memory_size=> '3072',
   :video_memory_size=> '64',
   :os_type_id => 'Windows8_64',
   :iso_download_instructions => 'Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx',

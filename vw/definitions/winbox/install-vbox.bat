@@ -5,3 +5,4 @@ if exist e:\cert\VBoxCertUtil (
 )
 cmd /c e:\VBoxWindowsAdditions-amd64.exe /S
 
+EXIT 0
