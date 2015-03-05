@@ -409,9 +409,9 @@ $ bundle exec veewee vbox winrm winbox ohai
       "fs_type": "ntfs",
       "volume_name": "Windows 2012"
     },
-    [...]
 ```
-*Beware*! It's a big bunch of data. Consider using some fast `JSON` support like [oj](https://github.com/ohler55/oj).
+
+Output is truncated - *beware*! It's a big bunch of data. Consider using some fast `JSON` support like [oj](https://github.com/ohler55/oj).
 
 ## Export boxen to Vagrant format
 
@@ -445,8 +445,11 @@ Please see the included `Vagrantfile` for configuration options:
 Vagrant.configure(2) do |config|
   config.vm.box = "winbox.box"
   config.vm.guest = :windows
+  # switch from 'home' to 'work' network mode (required for Windows 7 and up)
   config.windows.set_work_network = true
+  # RDP
   config.vm.network :forwarded_port, guest: 3389, host: 3389
+  # WinRM
   config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
 end
 ```
@@ -459,6 +462,6 @@ Please see it's GitHub page at [squeegee-run](https://github.com/gretel/squeegee
 
 ## License and Authors
 
-Author:: Tom Hensel (github@jitter.eu)
+Author:: [Tom Hensel](https://www.linkedin.com/pub/dir/tom/hensel) (github@jitter.eu)
 
 > Live long and prosper!
