@@ -32,8 +32,8 @@
                 <!--
                 <ProductKey><Key>YC6KT-GKW9T-YTKYR-T4X34-R7VHC</Key><WillShowUI>Never</WillShowUI></ProductKey>-->
                 <AcceptEula>true</AcceptEula>
-                <FullName>CloudOps Cowboy</FullName>
-                <Organization>Adobe Systems GmbH</Organization>
+                <FullName>Operator</FullName>
+                <Organization>Organization</Organization>
             </UserData>
             <ImageInstall>
                 <OSImage>
