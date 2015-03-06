@@ -5,6 +5,4 @@ if exist e:\cert\VBoxCertUtil (
 )
 cmd /c e:\VBoxWindowsAdditions-amd64.exe /S
 
-timeout 5
-
 EXIT 0

@@ -1,5 +1,8 @@
 @REM https://github.com/chocolatey/choco/wiki/CommandsReference
 
+@REM https://chocolatey.org/packages/boxstarter
+choco -y install boxstarter
+
 
 @REM https://chocolatey.org/packages/ruby
 @REM let's stick with chef's embedded ruby for now (install-chef.bat)
