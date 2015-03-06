@@ -254,7 +254,7 @@ To exit interactive mode, use 'quit!'
 veewee> VER
 Executing winrm command: VER
 
-Microsoft Windows [Version 6.2.9200]
+Microsoft Windows [Version 6.2.9600]
 veewee> quit!
 ```
 
