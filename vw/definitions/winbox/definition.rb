@@ -4,7 +4,7 @@ Veewee::Session.declare({
   :memory_size=> '3072',
   :video_memory_size=> '64',
   :os_type_id => 'Windows8_64',
-  :iso_download_instructions => 'Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx',
+  :iso_download_instructions => "Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx",
   :iso_file => '9200.16384.WIN8_RTM.120725-1247_X64FRE_SERVER_EVAL_EN-US-HRM_SSS_X64FREE_EN-US_DV5.ISO',
   :iso_md5 => '8503997171f731d9bd1cb0b0edc31f3d',
   :iso_src => 'http://care.dlservice.microsoft.com//dl/download/6/D/A/6DAB58BA-F939-451D-9101-7DE07DC09C03/9200.16384.WIN8_RTM.120725-1247_X64FRE_SERVER_EVAL_EN-US-HRM_SSS_X64FREE_EN-US_DV5.ISO',
@@ -31,6 +31,7 @@ Veewee::Session.declare({
   :sudo_cmd => '%f',
   :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c "Shutdown"',
   :virtualbox => {
+    :extradata => 'VBoxInternal/CPUM/CMPXCHG16B 1',
     :vm_options => [
       'audio' => 'null',
        # 'audio' => 'coreaudio',

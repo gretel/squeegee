@@ -25,7 +25,6 @@ powershell -noprofile -noninteractive -command "%DOWNLOAD_COMMAND%"
     ) else (
   @ECHO Failed to download %REMOTE_SOURCE_MSI_URL%
   @ECHO Subsequent attempt to install the downloaded MSI is likely to fail
-  del /f /q "%LOCAL_DESTINATION_MSI_PATH%"
 )
 
 msiexec /qn /i "%LOCAL_DESTINATION_MSI_PATH%"
