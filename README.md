@@ -275,13 +275,12 @@ The `.bat` files declared in `postinstall_files` will be executed in the order s
 This is what happens using the definitions above:
 
 1. Install **Chocolatey** (`install-chocolatey.bat`)
-2. .. which in turn installs **Boxstarter**
-3. Install packages using **Chocolatey** (`run-chocolatey.bat`)
-4. Install **Chef** using the OpsCode Installer (`install-chef.bat`)
-5. Update **Rubygems** and the gems brought by **Chef** (`update-gems.bat`)
-6. Run **Chef** client (to check if everything is setup fine) (`run-chef.bat`)
-7. Install **VirtualBox** Guest Addons (`install-vbox.bat`)
-8. Reboot gracefully (`do-reboot.bat`)
+2. Install packages using **Chocolatey** including **Boxstarter** (`run-chocolatey.bat`)
+3. Install **Chef** using the OpsCode Installer (`install-chef.bat`)
+4. Update **Rubygems** and the gems brought by **Chef** (`update-gems.bat`)
+5. **Chef** client (to check if everything is setup fine) (`run-chef.bat`)
+6. Install **VirtualBox** Guest Addons (`install-vbox.bat`)
+7. Reboot gracefully (`do-reboot.bat`)
 
 For **Puppet** there is `install-puppet.bat` which is truly _optional_.
 
@@ -413,6 +412,16 @@ $ bundle exec veewee vbox winrm winbox ohai
 ```
 
 Output is truncated - *beware*! It's a big bunch of data. Consider using some fast `JSON` support like [oj](https://github.com/ohler55/oj).
+
+### Boxstarter Shell
+
+Boxstarter can be used to manage **Chocolatey** packages as well as custom-built ones in a lot of ways. It comes bundles with a [shell-like environment](http://boxstarter.org/UsingBoxstarter):
+
+```shell
+$ bundle exec veewee vbox winrm winbox BOXSTARTERSHELL
+```
+
+Please take your time to read the [documentation](http://boxstarter.org/WhyBoxstarter) to unleash it's potential.
 
 ## Export boxen to Vagrant format
 
