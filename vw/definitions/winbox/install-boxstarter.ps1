@@ -26,26 +26,21 @@ function Check-Chocolatey {
     if(-not $env:ChocolateyInstall -or -not (Test-Path "$env:ChocolateyInstall")){
         $message = "Chocolatey is going to be downloaded and installed on your machine. If you do not have the .NET Framework Version 4 or greater, that will also be downloaded and installed."
         Write-Host $message
-        if($Force -OR (Confirm-Install)){
-            $exitCode = Enable-Net40
-            if($exitCode -ne 0) {
-                Write-Warning ".net install returned $exitCode. You likely need to reboot your computer before proceeding with the install."
-                return $false
-            }
-            $env:ChocolateyInstall = "$env:programdata\chocolatey"
-            New-Item $env:ChocolateyInstall -Force -type directory | Out-Null
-            $url="http://chocolatey.org/api/v2/package/chocolatey/"
-            $wc=new-object net.webclient
-            $wp=[system.net.WebProxy]::GetDefaultProxy()
-            $wp.UseDefaultCredentials=$true
-            $wc.Proxy=$wp
-            iex ($wc.DownloadString("http://chocolatey.org/install.ps1"))
-            Import-Module $env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1
-            $env:path="$env:path;$env:ChocolateyInstall\bin"
-        }
-        else{
+        $exitCode = Enable-Net40
+        if($exitCode -ne 0) {
+            Write-Warning ".net install returned $exitCode. You likely need to reboot your computer before proceeding with the install."
             return $false
         }
+        $env:ChocolateyInstall = "$env:programdata\chocolatey"
+        New-Item $env:ChocolateyInstall -Force -type directory | Out-Null
+        $url="http://chocolatey.org/api/v2/package/chocolatey/"
+        $wc=new-object net.webclient
+        $wp=[system.net.WebProxy]::GetDefaultProxy()
+        $wp.UseDefaultCredentials=$true
+        $wc.Proxy=$wp
+        iex ($wc.DownloadString("http://chocolatey.org/install.ps1"))
+        Import-Module $env:ChocolateyInstall\chocolateyinstall\helpers\chocolateyInstaller.psm1
+        $env:path="$env:path;$env:ChocolateyInstall\bin"
     }
     return $true
 }
@@ -93,16 +88,3 @@ function Get-HttpToFile ($url, $file){
     }
 }
 
-function Confirm-Install {
-    $caption = "Installing Chocolatey"
-    $message = "Do you want to proceed?"
-    $yes = new-Object System.Management.Automation.Host.ChoiceDescription "&Yes","Yes";
-    $no = new-Object System.Management.Automation.Host.ChoiceDescription "&No","No";
-    $choices = [System.Management.Automation.Host.ChoiceDescription[]]($yes,$no);
-    $answer = $host.ui.PromptForChoice($caption,$message,$choices,0)
-
-    switch ($answer){
-        0 {return $true; break}
-        1 {return $false; break}
-    }
-}
