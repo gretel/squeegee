@@ -244,8 +244,6 @@ If you would like to overwrite a previous build do:
 $ bundle exec veewee vbox build winbox --force
 ```
 
-*Be careful!* Any changes to `vw/definitions/winbox` will be overwritten when `--force` is applied - better commit them first.
-
 ## Usage Examples
 
 Bring up the boxen we have built, again:
