@@ -266,7 +266,7 @@ Finding unused TCP port in range: 5985 - 6025
 Selected TCP port 5985
 Waiting for winrm login on 127.0.0.1 with user vagrant to windows on port => 5985 to work, timeout=10000 sec
 .
-Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"
+Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Shutdown"
 ```
 
 ### Post-Installation
@@ -299,8 +299,8 @@ Executing winrm command: chef-solo
 [2015-02-28T22:14:00-08:00] WARN: *****************************************
 [2015-02-28T22:14:00-08:00] WARN: Did not find config file: C:\chef\solo.rb, using command line options.
 [2015-02-28T22:14:00-08:00] WARN: *****************************************
-[2015-02-28T22:14:05-08:00] INFO: *** Chef 12.0.3 ***
-[2015-02-28T22:14:05-08:00] INFO: Chef-client pid: 2240
+[2015-02-28T22:14:05-08:00] INFO: *** Chef xx.y.z ***
+[2015-02-28T22:14:05-08:00] INFO: Chef-client pid: nnnn
 [2015-02-28T22:14:36-08:00] INFO: Run List is []
 [2015-02-28T22:14:36-08:00] INFO: Run List expands to []
 [2015-02-28T22:14:36-08:00] INFO: Starting Chef Run for winbox
@@ -322,8 +322,8 @@ $ bundle exec veewee vbox winrm winbox SYSTEMINFO
 Executing winrm command: SYSTEMINFO
 
 Host Name:                 WINBOX
-OS Name:                   Microsoft Windows Server 2012 Standard Evaluation
-OS Version:                6.2.9200 N/A Build 9200
+OS Name:                   Microsoft Windows Server 2012 R2 Standard Evaluation
+OS Version:                6.2.9600 N/A Build 9600
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Server
 OS Build Type:             Multiprocessor Free
