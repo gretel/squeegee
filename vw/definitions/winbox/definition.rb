@@ -10,10 +10,7 @@ Veewee::Session.declare({
   :iso_src => "http://care.dlservice.microsoft.com/dl/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.16384.WINBLUE_RTM.130821-1623_X64FRE_SERVER_EVAL_EN-US-IRM_SSS_X64FREE_EN-US_DV5.ISO",
   :iso_download_timeout => '1800',
   :disk_size => '30420', :disk_format => 'VDI', :hostiocache => 'on',
-  :floppy_files => [
-    'Autounattend.xml',
-    'oracle-cert.cer'
-  ],
+  :floppy_files => [ 'Autounattend.xml', 'oracle-cert.cer' ],
   :boot_wait => '3',
   :boot_cmd_sequence => [''],
   :kickstart_port => '7122',
