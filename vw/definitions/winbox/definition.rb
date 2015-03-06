@@ -27,6 +27,7 @@ Veewee::Session.declare({
   :sudo_cmd => '%f',
   :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c "Shutdown"',
   :virtualbox => {
+    # required for 'blue' architecture
     :extradata => 'VBoxInternal/CPUM/CMPXCHG16B 1',
     :vm_options => [
       'audio' => 'null',
