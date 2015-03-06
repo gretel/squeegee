@@ -10,14 +10,14 @@ choco -y install boxstarter
 
 @REM https://chocolatey.org/packages/ruby2.devkit
 @REM allows to update i.e. 'bigdecimal' in 'do-update_gems.bat' - will not fail though
-choco -y install ruby2.devkit -d
+choco -y install ruby2.devkit
 
 
 @REM https://chocolatey.org/packages/baretail
 choco -y install baretail
 
-@REM https://chocolatey.org/packages/Console2
-choco -y install console2
+@REM https://chocolatey.org/packages/ConsoleZ
+choco -y install consolez
 
 @REM https://chocolatey.org/packages/cyberduck
 choco -y install cyberduck
@@ -28,7 +28,7 @@ choco -y install duck
 choco -y install firefox
 
 @REM https://chocolatey.org/packages/git
-choco -y install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"' -v
+choco -y install git -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"'
 
 @REM https://chocolatey.org/packages/logparser
 choco -y install logparser
