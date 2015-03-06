@@ -74,7 +74,6 @@ To update **VirtualBox** and **Vagrant** in a cronjob running weekly or so:
 $ brew cask update
 $ brew cask install virtualbox --force
 $ brew cask install vagrant --force
-$ brew cask cleanup
 ```
 
 If you intend to manually interfere with **VirtualBox** you can lookup it's info:
