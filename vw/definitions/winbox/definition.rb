@@ -18,8 +18,7 @@ Veewee::Session.declare({
   :winrm_password => 'vagrant',
   :postinstall_timeout => '10000',
   :postinstall_files => [
-    'install-boxstarter.bat', 'install-boxstarter.ps1', 'run-chocolatey.bat',
-    # 'install-chocolatey.bat', 'run-chocolatey.bat',
+    'install-chocolatey.bat', 'run-chocolatey.bat',
     'install-chef.bat', 'update-gems.bat', 'run-chef.bat',
     'install-vbox.bat',
     'do-reboot.bat'
