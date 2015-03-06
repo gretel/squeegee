@@ -415,7 +415,7 @@ Output is truncated - *beware*! It's a big bunch of data. Consider using some fa
 
 ### Boxstarter Shell
 
-Boxstarter can be used to manage **Chocolatey** packages as well as custom-built ones in a lot of ways. It comes bundles with a [shell-like environment](http://boxstarter.org/UsingBoxstarter):
+Boxstarter can be used to manage **Chocolatey** packages as well as [custom-built](http://boxstarter.org/UnderstandingPackages) ones in a lot of ways. It comes bundled with a [shell-like environment](http://boxstarter.org/UsingBoxstarter):
 
 ```shell
 $ bundle exec veewee vbox winrm winbox BOXSTARTERSHELL
