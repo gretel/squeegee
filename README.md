@@ -193,21 +193,6 @@ Veewee::Session.declare({
   }
 })
 ```
-### Post-Installation
-
-The `.bat` files declared in `postinstall_files` will be executed in the order specified. These are ***optional*** - **Windows** will be setup for **WinRM** management anyways.
-
-This is what happens using the definitions above: 
-
-1. Install **Chocolatey**
-2. Install packages using **Chocolatey**
-3. Install **Chef**
-4. Update **Rubygems** and the gems brought by **Chef**
-5. Run **Chef** client (to check if everything is setup fine)
-6. Install **VirtualBox** Guest Addons
-7. Reboot gracefully
-
-> **Chocolatey** is installed prior to **Chef** so you may use all the tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
 
 ### Unattended Installation
 
@@ -282,6 +267,26 @@ Waiting for winrm login on 127.0.0.1 with user vagrant to windows on port => 598
 .
 Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"
 ```
+
+### Post-Installation
+
+The `.bat` files declared in `postinstall_files` will be executed in the order specified. These are ***optional*** - **Windows** will be setup for **WinRM** management anyways.
+
+This is what happens using the definitions above:
+
+1. Install **Chocolatey** (`install-chocolatey.bat`)
+2. .. which in turn installs **Boxstarter**
+3. Install packages using **Chocolatey** (`run-chocolatey.bat`)
+4. Install **Chef** using the OpsCode Installer (`install-chef.bat`)
+5. Update **Rubygems** and the gems brought by **Chef** (`update-gems.bat`)
+6. Run **Chef** client (to check if everything is setup fine) (`run-chef.bat`)
+7. Install **VirtualBox** Guest Addons (`install-vbox.bat`)
+8. Reboot gracefully (`do-reboot.bat`)
+
+For **Puppet** there is `install-puppet.bat` which is truly _optional_.
+
+> **Chocolatey** is installed prior to **Boxstarter** so you may use all the tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
+Considering the feature-set of **Boxstarter** it is the recommended way of managing packages using **Chef** and the according [cookbook](https://github.com/mwrock/boxstarter-cookbook).
 
 ## Management
 
