@@ -1,11 +1,33 @@
 @REM https://github.com/chocolatey/choco/wiki/CommandsReference
 
+
+@REM *** chocolatey ***
+
+@REM make sure we have fresh choco
 choco -y upgrade chocolatey
+@REM for information purposes
+choco feature list
 
 
+@REM *** boxstarter ***
+
+@REM install boxstarter so chef has a good time
 @REM https://chocolatey.org/packages/boxstarter
 choco -y install boxstarter
 
+
+@REM *** ruby ***
+
+@REM https://chocolatey.org/packages/ruby
+@REM let's stick with chef's embedded ruby for now (install-chef.bat)
+@REM  choco -y install ruby2
+
+@REM https://chocolatey.org/packages/ruby2.devkit -d
+@REM allows to update i.e. 'bigdecimal' in 'update-gems.bat' - will not fail though
+@REM  choco -y install ruby2.devkit
+
+
+@REM *** development packages ***
 
 @REM https://chocolatey.org/packages/baretail
 choco -y install baretail
@@ -46,19 +68,5 @@ choco -y install sysinternals
 @REM https://chocolatey.org/packages/totalcommanderpowerpack
 choco -y install totalcommanderpowerpack
 
-
-@REM https://chocolatey.org/packages/ruby
-@REM let's stick with chef's embedded ruby for now (install-chef.bat)
-@REM  choco -y install ruby2
-
-@REM https://chocolatey.org/packages/ruby2.devkit -d
-@REM allows to update i.e. 'bigdecimal' in 'do-update_gems.bat' - will not fail though
-choco -y install ruby2.devkit
-
-
-choco feature list
-
-
-sleep 10
 
 EXIT 0
