@@ -192,6 +192,7 @@ Veewee::Session.declare({
     ]
   }
 })
+```
 
 ### Unattended Installation
 
