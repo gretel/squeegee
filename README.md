@@ -37,7 +37,7 @@ My machine is not so fast therefore provisioning takes a awful long time. Please
 
 ### Requirements
 
-- Ruby 2
+- Ruby 2 (author is currently using `2.2.0`)
 - Git
 - [Homebrew Cask](http://caskroom.io/)
 
@@ -64,7 +64,7 @@ $ brew install caskroom/cask/brew-cask
 Now, **VirtualBox** can be installed easily:
 
 ```shell
-$ brew update
+$ brew cask update
 $ brew cask install virtualbox
 ```
 
@@ -83,7 +83,7 @@ $ brew cask info virtualbox
 virtualbox: x.y.zz-bbbbb
 VirtualBox
 http://www.virtualbox.org
-/opt/homebrew-cask/Caskroom/virtualbox/x.y.zz-bbbbb (4 files, 110M)
+/opt/homebrew-cask/Caskroom/virtualbox/x.y.zz-bbbbb (4 files, mmmM)
 https://github.com/caskroom/homebrew-cask/blob/master/Casks/virtualbox.rb
 ==> Contents
   /Applications/VirtualBox.app/Contents/MacOS/VBoxManage (binary)
@@ -197,7 +197,7 @@ Veewee::Session.declare({
 
 The `.bat` files declared in `postinstall_files` will be executed in the order specified. These are ***optional*** - **Windows** will be setup for **WinRM** management anyways.
 
-This is what happens using the definitions above: 
+This is what happens using the definitions above:
 
 1. Install **Chocolatey**
 2. Install packages using **Chocolatey**
@@ -207,7 +207,9 @@ This is what happens using the definitions above:
 6. Install **VirtualBox** Guest Addons
 7. Reboot gracefully
 
-> **Chocolatey** is installed prior to **Chef** so you may use all the tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
+> **Boxstarter** is installed prior to **Chef** so you may use all the choco-tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
+
+Various combinations are possible, like installing **Chef** via **Chocolatey** or having **Boxstarter** installed first and skip to **Chef**.. use your imagination.
 
 ### Unattended Installation
 
