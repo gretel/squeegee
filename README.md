@@ -253,7 +253,7 @@ To exit interactive mode, use 'quit!'
 veewee> VER
 Executing winrm command: VER
 
-Microsoft Windows [Version 6.2.9600]
+Microsoft Windows [Version 6.3.9600]
 veewee> quit!
 ```
 
@@ -326,20 +326,20 @@ Executing winrm command: SYSTEMINFO
 
 Host Name:                 WINBOX
 OS Name:                   Microsoft Windows Server 2012 R2 Standard Evaluation
-OS Version:                6.2.9600 N/A Build 9600
+OS Version:                6.3.9600 N/A Build 9600
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Server
 OS Build Type:             Multiprocessor Free
 Registered Owner:
-Registered Organization:   Some Corp
-Product ID:                00183-90000-00001-AA422
-Original Install Date:     2/28/2015, 1:39:43 PM
-System Boot Time:          2/28/2015, 10:07:20 PM
+Registered Organization:   Squeegee Veewee
+Product ID:                00252-10000-00000-AA228
+Original Install Date:     3/10/2015, 10:59:58 AM
+System Boot Time:          3/10/2015, 11:11:37 AM
 System Manufacturer:       innotek GmbH
 System Model:              VirtualBox
 System Type:               x64-based PC
 Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 42 Stepping 7 GenuineIntel ~2008 Mhz
+                           [01]: Intel64 Family 6 Model 42 Stepping 7 GenuineIntel ~1704 Mhz
 BIOS Version:              innotek GmbH VirtualBox, 12/1/2006
 Windows Directory:         C:\Windows
 System Directory:          C:\Windows\system32
@@ -347,18 +347,15 @@ Boot Device:               \Device\HarddiskVolume1
 System Locale:             en-us;English (United States)
 Input Locale:              en-us;English (United States)
 Time Zone:                 (UTC-08:00) Pacific Time (US & Canada)
-Total Physical Memory:     2,048 MB
-Available Physical Memory: 1,422 MB
-Virtual Memory: Max Size:  2,997 MB
-Virtual Memory: Available: 2,316 MB
-Virtual Memory: In Use:    681 MB
+Total Physical Memory:     1,536 MB
+Available Physical Memory: 1,098 MB
+Virtual Memory: Max Size:  2,624 MB
+Virtual Memory: Available: 2,177 MB
+Virtual Memory: In Use:    447 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              N/A
-Hotfix(s):                 3 Hotfix(s) Installed.
-                           [01]: KB2887535
-                           [02]: KB2887536
-                           [03]: KB2887537
+Hotfix(s):                 N/A
 Network Card(s):           1 NIC(s) Installed.
                            [01]: Intel(R) PRO/1000 MT Desktop Adapter
                                  Connection Name: Ethernet
@@ -366,7 +363,7 @@ Network Card(s):           1 NIC(s) Installed.
                                  DHCP Server:     10.0.2.2
                                  IP address(es)
                                  [01]: 10.0.2.15
-                                 [02]: fe80::6d8d:97e0:dae3:e495
+                                 [02]: fe80::8837:bc16:60a:fe7e
 Hyper-V Requirements:      VM Monitor Mode Extensions: No
                            Virtualization Enabled In Firmware: No
                            Second Level Address Translation: No
