@@ -1,8 +1,8 @@
 # https://github.com/jedi4ever/veewee/blob/master/doc/customize.md
 Veewee::Session.declare({
-  :cpu_count => '2',
-  :memory_size=> '3072',
-  :video_memory_size=> '64',
+  :cpu_count => '1',
+  :memory_size=> '1536',
+  :video_memory_size=> '32',
   :os_type_id => 'Windows8_64',
   :iso_download_instructions => "Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx",
   :iso_file => "9600.16384.WINBLUE_RTM.130821-1623_X64FRE_SERVER_EVAL_EN-US-IRM_SSS_X64FREE_EN-US_DV5.ISO",

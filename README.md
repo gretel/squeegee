@@ -150,16 +150,13 @@ Veewee::Session.declare({
   :memory_size=> '3072',
   :video_memory_size=> '64',
   :os_type_id => 'Windows8_64',
-  :iso_download_instructions => 'Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx',
-  :iso_file => '9200.16384.WIN8_RTM.120725-1247_X64FRE_SERVER_EVAL_EN-US-HRM_SSS_X64FREE_EN-US_DV5.ISO',
-  :iso_md5 => '8503997171f731d9bd1cb0b0edc31f3d',
-  :iso_src => 'http://care.dlservice.microsoft.com//dl/download/6/D/A/6DAB58BA-F939-451D-9101-7DE07DC09C03/9200.16384.WIN8_RTM.120725-1247_X64FRE_SERVER_EVAL_EN-US-HRM_SSS_X64FREE_EN-US_DV5.ISO',
+  :iso_download_instructions => "Download and install full featured software for 180-day trial at http://technet.microsoft.com/en-US/evalcenter/hh670538.aspx",
+  :iso_file => "9600.16384.WINBLUE_RTM.130821-1623_X64FRE_SERVER_EVAL_EN-US-IRM_SSS_X64FREE_EN-US_DV5.ISO",
+  :iso_md5 => "458ff91f8abc21b75cb544744bf92e6a",
+  :iso_src => "http://care.dlservice.microsoft.com/dl/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.16384.WINBLUE_RTM.130821-1623_X64FRE_SERVER_EVAL_EN-US-IRM_SSS_X64FREE_EN-US_DV5.ISO",
   :iso_download_timeout => '1800',
-  :disk_size => '20280', :disk_format => 'VDI', :hostiocache => 'on',
-  :floppy_files => [
-    'Autounattend.xml',
-    'oracle-cert.cer'
-  ],
+  :disk_size => '30420', :disk_format => 'VDI', :hostiocache => 'on',
+  :floppy_files => [ 'Autounattend.xml', 'oracle-cert.cer' ],
   :boot_wait => '3',
   :boot_cmd_sequence => [''],
   :kickstart_port => '7122',
@@ -167,18 +164,21 @@ Veewee::Session.declare({
   :winrm_password => 'vagrant',
   :postinstall_timeout => '10000',
   :postinstall_files => [
-     'install-chocolatey.bat', 'run-chocolatey.bat',
-     'install-chef.bat', 'do-update_gems.bat', 'run-chef.bat',
-     'install-vbox.bat',
-     'do-reboot.bat'
+    'install-chocolatey.bat', 'run-chocolatey.bat',
+    'install-chef.bat', 'update-gems.bat', 'run-chef.bat',
+    'install-vbox.bat',
+    'do-reboot.bat'
   ],
   # No sudo on windows
   :sudo_cmd => '%f',
-  :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"',
+  :shutdown_cmd => 'shutdown /s /t 10 /f /d p:4:1 /c "Shutdown"',
   :virtualbox => {
+    # required for 'blue' architecture
+    :extradata => 'VBoxInternal/CPUM/CMPXCHG16B 1',
     :vm_options => [
-      'audio' => 'coreaudio',
-      'audiocontroller' => 'hda',
+      'audio' => 'null',
+      # 'audio' => 'coreaudio',
+      # 'audiocontroller' => 'hda',
       'ioapic' => 'on',
       'rtcuseutc' => 'on',
       'usb' => 'on',
@@ -192,26 +192,6 @@ Veewee::Session.declare({
     ]
   }
 })
-```
-### Post-Installation
-
-The `.bat` files declared in `postinstall_files` will be executed in the order specified. These are ***optional*** - **Windows** will be setup for **WinRM** management anyways.
-
-This is what happens using the definitions above:
-
-1. Install **Chocolatey**
-2. Install packages using **Chocolatey**
-3. Install **Chef**
-4. Update **Rubygems** and the gems brought by **Chef**
-5. Run **Chef** client (to check if everything is setup fine)
-6. Install **VirtualBox** Guest Addons
-7. Reboot gracefully
-
-> **Boxstarter** is installed prior to **Chef** so you may use all the choco-tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
-
-Various combinations are possible, like installing **Chef** via **Chocolatey** or having **Boxstarter** installed first and skip to **Chef**.
-
-Please check out the [introduction video](https://www.youtube.com/watch?v=sgzVTG-zIPE) on **Boxstarter**.
 
 ### Unattended Installation
 
@@ -272,7 +252,7 @@ To exit interactive mode, use 'quit!'
 veewee> VER
 Executing winrm command: VER
 
-Microsoft Windows [Version 6.2.9200]
+Microsoft Windows [Version 6.2.9600]
 veewee> quit!
 ```
 
@@ -284,8 +264,31 @@ Finding unused TCP port in range: 5985 - 6025
 Selected TCP port 5985
 Waiting for winrm login on 127.0.0.1 with user vagrant to windows on port => 5985 to work, timeout=10000 sec
 .
-Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Vagrant Shutdown"
+Executing winrm command: shutdown /s /t 10 /f /d p:4:1 /c "Shutdown"
 ```
+
+### Post-Installation
+
+The `.bat` files declared in `postinstall_files` will be executed in the order specified. These are ***optional*** - **Windows** will be setup for **WinRM** management anyways.
+
+This is what happens using the definitions above:
+
+1. Install **Chocolatey** (`install-chocolatey.bat`)
+2. Install packages using **Chocolatey** including **Boxstarter** (`run-chocolatey.bat`)
+3. Install **Chef** using the OpsCode Installer (`install-chef.bat`)
+4. Update **Rubygems** and the gems brought by **Chef** (`update-gems.bat`)
+5. **Chef** client (to check if everything is setup fine) (`run-chef.bat`)
+6. Install **VirtualBox** Guest Addons (`install-vbox.bat`)
+7. Reboot gracefully (`do-reboot.bat`)
+
+For **Puppet** there is `install-puppet.bat` which is truly _optional_.
+
+> **Chocolatey** is installed prior to **Boxstarter** so you may use all the tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
+Considering the feature-set of **Boxstarter** it is the recommended way of managing packages using **Chef** and the according [cookbook](https://github.com/mwrock/boxstarter-cookbook).
+
+Though, various combinations are possible, like installing **Chef** via **Chocolatey** or having **Boxstarter** installed first and skip to **Chef**.
+
+Please check out the [introduction video](https://www.youtube.com/watch?v=sgzVTG-zIPE) on **Boxstarter**.
 
 ## Management
 
@@ -298,8 +301,8 @@ Executing winrm command: chef-solo
 [2015-02-28T22:14:00-08:00] WARN: *****************************************
 [2015-02-28T22:14:00-08:00] WARN: Did not find config file: C:\chef\solo.rb, using command line options.
 [2015-02-28T22:14:00-08:00] WARN: *****************************************
-[2015-02-28T22:14:05-08:00] INFO: *** Chef 12.0.3 ***
-[2015-02-28T22:14:05-08:00] INFO: Chef-client pid: 2240
+[2015-02-28T22:14:05-08:00] INFO: *** Chef xx.y.z ***
+[2015-02-28T22:14:05-08:00] INFO: Chef-client pid: nnnn
 [2015-02-28T22:14:36-08:00] INFO: Run List is []
 [2015-02-28T22:14:36-08:00] INFO: Run List expands to []
 [2015-02-28T22:14:36-08:00] INFO: Starting Chef Run for winbox
@@ -321,8 +324,8 @@ $ bundle exec veewee vbox winrm winbox SYSTEMINFO
 Executing winrm command: SYSTEMINFO
 
 Host Name:                 WINBOX
-OS Name:                   Microsoft Windows Server 2012 Standard Evaluation
-OS Version:                6.2.9200 N/A Build 9200
+OS Name:                   Microsoft Windows Server 2012 R2 Standard Evaluation
+OS Version:                6.2.9600 N/A Build 9600
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Server
 OS Build Type:             Multiprocessor Free
@@ -412,6 +415,16 @@ $ bundle exec veewee vbox winrm winbox ohai
 ```
 
 Output is truncated - *beware*! It's a big bunch of data. Consider using some fast `JSON` support like [oj](https://github.com/ohler55/oj).
+
+### Boxstarter Shell
+
+Boxstarter can be used to manage **Chocolatey** packages as well as [custom-built](http://boxstarter.org/UnderstandingPackages) ones in a lot of ways. It comes bundled with a [shell-like environment](http://boxstarter.org/UsingBoxstarter):
+
+```shell
+$ bundle exec veewee vbox winrm winbox BOXSTARTERSHELL
+```
+
+Please take your time to read the [documentation](http://boxstarter.org/WhyBoxstarter) to unleash it's potential.
 
 ## Export boxen to Vagrant format
 
