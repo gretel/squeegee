@@ -209,7 +209,9 @@ This is what happens using the definitions above:
 
 > **Boxstarter** is installed prior to **Chef** so you may use all the choco-tasty [packages available](https://chocolatey.org/packages) to start your **Windows** cookbook development work.
 
-Various combinations are possible, like installing **Chef** via **Chocolatey** or having **Boxstarter** installed first and skip to **Chef**.. use your imagination.
+Various combinations are possible, like installing **Chef** via **Chocolatey** or having **Boxstarter** installed first and skip to **Chef**.
+
+Please check out the [introduction video](https://www.youtube.com/watch?v=sgzVTG-zIPE) on **Boxstarter**.
 
 ### Unattended Installation
 
