@@ -45,7 +45,7 @@ My machine is not so fast therefore provisioning takes a awful long time. Please
 
 #### Homebrew
 
-If you have not installed **VirtualBox** previously now is a good time to do so:
+If you have not installed **Homebrew** previously now is a good time to do so:
 
 ```shell
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
